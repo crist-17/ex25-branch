@@ -18,7 +18,7 @@ public class PerformanceAspect {
         long start = System.currentTimeMillis();
         Object result = pjp.proceed();
         long end = System.currentTimeMillis();
-        log.info("<<<<<abcde>>>>> 메서드 실행전: {} >>>>>>> \n <<<<<rasdb>>>> {} >>>>", pjp.getSignature(), (end-start));
-        return  pjp.proceed();
+        log.info("<<<<<abcde>>>>> 메서드 실행시간: {} >>>>>>> \n <<<<<rasdb>>>> {} >>>>", pjp.getSignature(), (end-start));
+        return  result;
     }
 }

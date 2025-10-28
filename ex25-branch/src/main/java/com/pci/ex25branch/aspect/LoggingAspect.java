@@ -18,11 +18,11 @@ public class LoggingAspect {
         log.info("---메서드 실행전: {} mmmmmm", jp.getSignature());
     }
 
-//    @AfterReturning(pointcut = "execution(* com.pci.ex25branch.service.*.*(..))",returning = "result")
-//    public void logAfter(JoinPoint jp, Object result){
-//        log.info("WWWWW 메서드 실행성공: {} wwwww \n wwwww {} wwwww", jp.getSignature(),result);
-//
-//    }
+    @AfterReturning(pointcut = "execution(* com.pci.ex25branch.service.*.*(..))",returning = "result")
+    public void logAfter(JoinPoint jp, Object result){
+        log.info("WWWWW 메서드 실행성공: {} wwwww \n wwwww {} wwwww", jp.getSignature(),result);
+
+    }
 
 
 }
