@@ -7,7 +7,7 @@ plugins {
 group = 'com.pci'
 version = '0.0.1-SNAPSHOT'
 description = 'ex25-branch'
-
+ 
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
@@ -30,6 +30,11 @@ dependencies {
     //aop 추가
     implementation 'org.springframework.boot:spring-boot-starter-aop'
 
+    // ✅ test 코드에서도 Lombok 인식되도록 추가
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5'
