@@ -1,8 +1,8 @@
 package com.pci.ex25branch.domain;
 
-import java.time.LocalDateTime;
-
 import lombok.Data;
+
+import java.time.LocalDateTime;
 
 @Data
 public class Student {
