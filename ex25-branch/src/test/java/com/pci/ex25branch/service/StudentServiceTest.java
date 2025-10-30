@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @MybatisTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
@@ -24,7 +24,24 @@ public class StudentServiceTest {
     @Test
     @DisplayName("학생 등록후 조회 확인(TDD)")
     void testRegisterAndFind() {
-         }
+        // given
+        StudentTest s1 = StudentTest.builder().name("홍길동1").email("hong1@test.com").age(21).build();
+        StudentTest s2 = StudentTest.builder().name("홍길동2").email("hong1@test.com").age(12).build();
+        //when
+        int result = studentMapperTest.insert(s1);
+
+    // then
+    assertEquals(1,result, "등록은 1건 성공해야한다.");
+    assertNotNull(s1.getId(),"등록후 id가 자동생성됨");
+
+    StudentTest findStudent = studentMapperTest.findById(s1.getId());
+    assertEquals("홍길동1", findStudent.getName());
+    assertEquals("hong1@test.com",  findStudent.getEmail());
+    assertEquals(21,findStudent.getAge());
+    }
+
+
+
 
     @Test
     @DisplayName("학생 전체 조회 (TDD)")
