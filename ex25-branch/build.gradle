@@ -25,10 +25,12 @@ repositories {
 }
 
 dependencies {
+
     //valid 추가
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     //aop 추가
     implementation 'org.springframework.boot:spring-boot-starter-aop'
+
 
     // ✅ test 코드에서도 Lombok 인식되도록 추가
     testCompileOnly 'org.projectlombok:lombok'
