@@ -1,0 +1,16 @@
+package com.pci.ex25branch.domain;
+
+import lombok.Data;
+
+import java.time.LocalDateTime;
+
+@Data
+public class Student {
+
+    private Long id;
+    private String name;
+    private String email;
+    private int age;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+}

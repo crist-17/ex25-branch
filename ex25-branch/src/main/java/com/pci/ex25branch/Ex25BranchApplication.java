@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Ex25BranchApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(Ex25BranchApplication.class, args);
     }
 
